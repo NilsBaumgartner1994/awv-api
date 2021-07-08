@@ -9,6 +9,7 @@
 - Lint Action
 
 ### README.md
+
 - Change all Badges to correct url
 
 ### SondarCloud
@@ -46,10 +47,10 @@
   - https://travis-ci.com/dashboard
 #
 ### Lint Action
+
 - Automatically formats code to meet linting requirements
   - https://github.com/marketplace/actions/lint-action
 - https://github.com/wearerequired/lint-action
   - Setup in .github/workflows/build.yml
   - activate: auto_fix
   - add .github to .eslintignore and .prettierignore
-  
