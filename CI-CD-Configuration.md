@@ -12,7 +12,7 @@
 - Change all Badges to correct url
 
 ### SondarCloud
-
+`for new project`
 - Checks any Code-Smells and Code-Quality metrics
   - Activate account and connect with GitHub
     - https://sonarcloud.io/projects
@@ -25,23 +25,26 @@
   - Configure New Code after first analysis to "Previous version"
     - All code that has changed since the previous version bump is considered new code
 
-### Travis-CI
 
-- Check GitHub integration
-  - https://travis-ci.com/dashboard
-
-#### Coveralls
-
+### Coveralls (part of Travis-CI)
+`for new project`
 - Checks the coverage tests
 - Add the Repo
   - https://coveralls.io/repos/new
 
+  
 ### Fossa
-
+`for new project`
 - Check the if any license problems are found
 - Add the Repo
   - https://app.fossa.com/projects
 
+
+### Travis-CI
+
+- Check GitHub integration
+  - https://travis-ci.com/dashboard
+#
 ### Lint Action
 - Automatically formats code to meet linting requirements
   - https://github.com/marketplace/actions/lint-action
