@@ -1,6 +1,6 @@
 {
   "name": "awv-api",
-  "version": "0.0.35",
+  "version": "0.0.40",
   "description": "AWV-API",
   "main": "index.js",
   "types": "index.d.ts",
@@ -14,7 +14,8 @@
     "dev": "nodemon",
     "_prepareUpload": "npm run build && rm -rf ./coverage && rm -rf ./build/tests",
     "_uploadBuild": "cd ./build && npm pack && npm publish && cd ..",
-    "upload": "npm run _prepareUpload && npm run _uploadBuild && npm run clean",
+    "_uploadWithoutPatch": "npm run _prepareUpload && npm run _uploadBuild && npm run clean",
+    "upload": "npm version patch && npm run _uploadWithoutPatch",
     "clean": "rm -rf ./build && gts clean",
     "lint": "gts lint",
     "fix": "gts fix"
