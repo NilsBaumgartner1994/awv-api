@@ -1,4 +1,4 @@
-name: Node.js Package
+name: NPM Publish
 on:
   workflow_run:
     workflows: ["Check"]
@@ -15,10 +15,11 @@ jobs:
         with:
           node-version: '12.x'
           registry-url: 'https://registry.npmjs.org'
-      - run: npm ci
+      - run: npm install
       - run: git config --global user.name 'NPM Publisher'
       - run: git config --global user.email 'bot@npmpublisher'
-      - run: npm run upload
+      - run: npm version patch -m "[RELEASE] %s"
       - run: git push
+      - run: npm run upload
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

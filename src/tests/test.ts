@@ -1,4 +1,4 @@
-import FetchHelper from '../FetchHelper';
+import FetchHelper from '../ignoreCoverage/FetchHelper';
 
 test('Server start Test', (): void => {
   const options = {};
