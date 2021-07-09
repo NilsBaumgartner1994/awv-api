@@ -17,7 +17,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
       - run: git config --global user.name 'NPM Publisher'
-      - run: git config --global user.email 'bot@npmpublisher'
+      - run: git config --global user.email 'nilsbaumgartner1994@gmail.com'
       - run: npm version patch -m "[RELEASE] %s"
       - run: git push
       - run: npm run _uploadWithoutPatch
