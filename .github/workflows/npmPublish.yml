@@ -19,5 +19,6 @@ jobs:
       - run: git config --global user.name 'NPM Publisher'
       - run: git config --global user.email 'bot@npmpublisher'
       - run: npm run upload
+      - run: git push
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
