@@ -24,32 +24,24 @@
     - Add .github/workflows/build.yml to the repo
       - Check correct branch: master-->main
     - Add sonar-project.properties
-    - Add SONAR-TOKEN to Git-Repo
+    - Add `SONAR-TOKEN` to Git-Repo
   - Configure New Code after first analysis to "Previous version"
     - All code that has changed since the previous version bump is considered new code
 
-### Coveralls (part of Travis-CI)
-
-`for new project`
-
-- Checks the coverage tests
-- Add the Repo
-  - https://coveralls.io/repos/new
-
 ### Fossa
-
 `for new project`
-
 - Check the if any license problems are found
 - Add the Repo
   - https://app.fossa.com/projects
 
-### Travis-CI
 
-- Check GitHub integration
-  - https://travis-ci.com/dashboard
-
-#
+### NPM Publish CI/CD
+- Add new Secret to Git-Repo: NPM_TOKEN
+  - https://docs.npmjs.com/creating-and-viewing-access-tokens
+- Add new Secret to Git-Repo: GH_PERSONAL_ACCESS_TOKEN
+    - Select scopes: `repo`
+  - https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token
+- from Tutorial: https://aboutbits.it/blog/2021-03-11-using-github-actions-to-perfom-npm-version-increment
 
 ### Lint Action
 
