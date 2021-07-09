@@ -17,13 +17,17 @@
 </p>
 
 <p align="center">
-  <a href="https://travis-ci.com/NilsBaumgartner1994/awv-api.svg?branch=main"><img src="https://travis-ci.com/NilsBaumgartner1994/awv-api.svg?branch=main" alt="build" /></a>
-  <a href="https://coveralls.io/repos/github/NilsBaumgartner1994/awv-api/badge.svg?branch=main"><img src="https://coveralls.io/repos/github/NilsBaumgartner1994/awv-api/badge.svg?branch=main" alt="coverage" /></a>
+  <a href="https://github.com/NilsBaumgartner1994/awv-api/actions/workflows/npmPublish.yml"><img src="https://github.com/NilsBaumgartner1994/awv-api/actions/workflows/npmPublish.yml/badge.svg" alt="Npm publish" /></a>
+  <a href="https://github.com/NilsBaumgartner1994/awv-api/actions/workflows/linter.yml"><img src="https://github.com/NilsBaumgartner1994/awv-api/actions/workflows/linter.yml/badge.svg" alt="Build status" /></a>
+  <a href="https://sonarcloud.io/dashboard?id=NilsBaumgartner1994_awv-api"><img src="https://sonarcloud.io/api/project_badges/measure?project=NilsBaumgartner1994_awv-api&metric=alert_status" alt="Quality Gate" /></a>
+  <a href="https://sonarcloud.io/dashboard?id=NilsBaumgartner1994_awv-api"><img src="https://sonarcloud.io/api/project_badges/measure?project=NilsBaumgartner1994_awv-api&metric=bugs" alt="Bugs" /></a>
+  <a href="https://sonarcloud.io/dashboard?id=NilsBaumgartner1994_awv-api"><img src="https://sonarcloud.io/api/project_badges/measure?project=NilsBaumgartner1994_awv-api&metric=coverage" alt="Coverage" /></a>
   <a href="https://sonarcloud.io/dashboard?id=NilsBaumgartner1994_awv-api"><img src="https://sonarcloud.io/api/project_badges/measure?project=NilsBaumgartner1994_awv-api&metric=code_smells" alt="Code Smells" /></a>
   <a href="https://sonarcloud.io/dashboard?id=NilsBaumgartner1994_awv-api"><img src="https://sonarcloud.io/api/project_badges/measure?project=NilsBaumgartner1994_awv-api&metric=duplicated_lines_density" alt="Duplicated Lines (%)" /></a>
   <a href="https://sonarcloud.io/dashboard?id=NilsBaumgartner1994_awv-api"><img src="https://sonarcloud.io/api/project_badges/measure?project=NilsBaumgartner1994_awv-api&metric=sqale_rating" alt="Maintainability Rating" /></a>
   <a href="https://sonarcloud.io/dashboard?id=NilsBaumgartner1994_awv-api"><img src="https://sonarcloud.io/api/project_badges/measure?project=NilsBaumgartner1994_awv-api&metric=reliability_rating" alt="Reliability Rating" /></a>
   <a href="https://sonarcloud.io/dashboard?id=NilsBaumgartner1994_awv-api"><img src="https://sonarcloud.io/api/project_badges/measure?project=NilsBaumgartner1994_awv-api&metric=security_rating" alt="Security Rating" /></a>
+  <a href="https://sonarcloud.io/dashboard?id=NilsBaumgartner1994_awv-api"><img src="https://sonarcloud.io/api/project_badges/measure?project=NilsBaumgartner1994_awv-api&metric=sqale_index" alt="Technical Debt" /></a>
   <a href="https://sonarcloud.io/dashboard?id=NilsBaumgartner1994_awv-api"><img src="https://sonarcloud.io/api/project_badges/measure?project=NilsBaumgartner1994_awv-api&metric=vulnerabilities" alt="Vulnerabilities" /></a>
 </p>
 
