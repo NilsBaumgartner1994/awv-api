@@ -1,5 +1,3 @@
-import Server from './server';
-import CoverageExample from './coverageExample';
+import FetchHelper from './FetchHelper';
 
-export {Server};
-export {CoverageExample};
+export {FetchHelper};

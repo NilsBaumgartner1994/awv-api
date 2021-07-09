@@ -1,7 +1,8 @@
-import Server from './../server';
+import FetchHelper from "../FetchHelper";
+
 
 test('Server start Test', (): void => {
   const options = {};
-  const server = new Server(options);
-  expect(server.start()).toBe('Starting');
+  const server = new FetchHelper();
+  expect(12).toBe('Starting');
 });
