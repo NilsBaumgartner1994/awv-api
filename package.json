@@ -14,7 +14,7 @@
     "dev": "nodemon",
     "_prepareUpload": "npm run build && rm -rf ./coverage && rm -rf ./build/tests",
     "_uploadBuild": "cd ./build && echo '2' && npm version patch && echo '3' && npm publish && echo '4' && cd ..",
-    "upload": "npm run _prepareUpload && echo '1' && npm run _uploadBuild && npm version patch && echo '5' && npm run clean",
+    "upload": "npm run _prepareUpload && echo '1' && npm run _uploadBuild && npm version patch -m '[RELEASE] %s' && echo '5' && npm run clean",
     "clean": "rm -rf ./build && gts clean",
     "lint": "gts lint",
     "fix": "gts fix"
