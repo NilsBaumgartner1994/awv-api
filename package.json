@@ -1,7 +1,7 @@
 {
   "name": "awv-api",
-  "version": "0.0.31",
-  "description": "Firebolt-API",
+  "version": "0.0.35",
+  "description": "AWV-API",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
@@ -13,8 +13,8 @@
     "build": "npm run _prepareBuild && rimraf ./build && tsc && cp package.json ./build && cp README.md ./build",
     "dev": "nodemon",
     "_prepareUpload": "npm run build && rm -rf ./coverage && rm -rf ./build/tests",
-    "_uploadBuild": "cd ./build && echo npm version patch && npm publish && cd ..",
-    "upload": "npm run _prepareUpload && npm run _uploadBuild && npm version patch -m '[RELEASE] %s' å&& npm run clean",
+    "_uploadBuild": "cd ./build && npm pack && npm publish && cd ..",
+    "upload": "npm run _prepareUpload && npm run _uploadBuild && npm run clean",
     "clean": "rm -rf ./build && gts clean",
     "lint": "gts lint",
     "fix": "gts fix"
