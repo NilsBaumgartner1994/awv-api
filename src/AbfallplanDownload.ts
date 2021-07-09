@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 const fetch = require('node-fetch');
 
 export default class AbfallplanDownload {
