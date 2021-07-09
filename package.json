@@ -1,6 +1,6 @@
 {
   "name": "awv-api",
-  "version": "0.0.1",
+  "version": "0.0.10",
   "description": "Firebolt-API",
   "main": "index.js",
   "types": "index.d.ts",
