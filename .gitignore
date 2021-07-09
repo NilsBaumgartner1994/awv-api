@@ -1,5 +1,4 @@
 # Logs
-package-lock.json
 logs
 *.log
 npm-debug.log*
@@ -92,3 +91,5 @@ typings/
 .idea/
 
 .DS_Store
+
+package-lock.json
