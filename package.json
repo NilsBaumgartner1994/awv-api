@@ -1,6 +1,6 @@
 {
   "name": "awv-api",
-  "version": "0.0.43",
+  "version": "0.0.44",
   "description": "AWV-API",
   "main": "index.js",
   "types": "index.d.ts",
