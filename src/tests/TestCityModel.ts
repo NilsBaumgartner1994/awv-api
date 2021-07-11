@@ -1,11 +1,9 @@
-import DownloadHelper from '../helper/DownloadHelper';
-import FakeBackendOfAWV from '../ignoreCoverage/FakeBackendOfAWV';
 import City from '../models/City';
 import Street from '../models/Street';
 
-let id = 6;
-let label = 'Label';
-let value = 'Value';
+const id = 6;
+const label = 'Label';
+const value = 'Value';
 let city: City;
 
 beforeEach(() => {
@@ -20,14 +18,14 @@ test('Test city constructor', async () => {
 });
 
 test('Test invalid city', async () => {
-  // @ts-ignore //ignore invalid type passing
   expect(() => {
+    // @ts-ignore //ignore invalid type passing
     new City('a', null, null);
   }).toThrow();
 });
 
 test('Test city set streets', async () => {
-  let street = new Street(
+  const street = new Street(
     1,
     'label',
     'value',
@@ -35,7 +33,7 @@ test('Test city set streets', async () => {
     'siemer',
     'abfuhrbezirk'
   );
-  let listOfStreets = [street];
+  const listOfStreets = [street];
   city.setStreets(listOfStreets);
   expect(city.streets).toBe(listOfStreets);
 });

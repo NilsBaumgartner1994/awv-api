@@ -1,11 +1,11 @@
 import Street from '../models/Street';
 
-let id = 6;
-let label = 'Label';
-let value = 'Value';
-let pamo = '0';
-let siemer = '2';
-let abfuhrbezirk = '1';
+const id = 6;
+const label = 'Label';
+const value = 'Value';
+const pamo = '0';
+const siemer = '2';
+const abfuhrbezirk = '1';
 let street: Street;
 
 beforeEach(() => {
@@ -22,8 +22,8 @@ test('Test street constructor', async () => {
 });
 
 test('Test invalid street', async () => {
-  // @ts-ignore //ignore invalid type passing
   expect(() => {
+    // @ts-ignore //ignore invalid type passing
     new Street('a', null, null, null, null, null);
   }).toThrow();
 });

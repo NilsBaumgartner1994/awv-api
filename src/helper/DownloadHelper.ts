@@ -13,8 +13,8 @@ import FieldHelper from './FieldHelper';
  */
 export default class DownloadHelper {
   static async searchCityOnly(year: number, citySearchName: string) {
-    let url = UrlHelper.getCitySearchURL(citySearchName);
-    let response = await FetchHelper.fetchWithCookie(
+    const url = UrlHelper.getCitySearchURL(citySearchName);
+    const response = await FetchHelper.fetchWithCookie(
       url,
       year,
       null,
@@ -23,14 +23,14 @@ export default class DownloadHelper {
       null,
       null
     );
-    let listOfCityJSON = await response.json();
+    const listOfCityJSON = await response.json();
     return DownloadHelper.transformCityResponceToClass(listOfCityJSON);
   }
 
   static transformCityResponceToClass(listOfCityJSON: any[]) {
-    let cities = [];
-    for (let cityJSON of listOfCityJSON) {
-      let city = new City(
+    const cities = [];
+    for (const cityJSON of listOfCityJSON) {
+      const city = new City(
         parseInt(cityJSON.id),
         cityJSON.label,
         cityJSON.value
@@ -46,8 +46,8 @@ export default class DownloadHelper {
     cityId: number,
     streetSearchContainsName: string
   ) {
-    let url = UrlHelper.getStreetSearchURL(cityId, streetSearchContainsName);
-    let response = await FetchHelper.fetchWithCookie(
+    const url = UrlHelper.getStreetSearchURL(cityId, streetSearchContainsName);
+    const response = await FetchHelper.fetchWithCookie(
       url,
       year,
       cityId,
@@ -56,23 +56,23 @@ export default class DownloadHelper {
       null,
       null
     );
-    let answer = await response.text();
-    let listOfStreetJSONRaw = DownloadHelper.extractStreetJSONResponse(answer);
-    console.log(listOfStreetJSONRaw);
+    const answer = await response.text();
+    const listOfStreetJSONRaw =
+      DownloadHelper.extractStreetJSONResponse(answer);
     return DownloadHelper.transformStreetResponceToClass(listOfStreetJSONRaw);
   }
 
   static extractStreetJSONResponse(answer: any) {
-    let substring = answer.substr(1, answer.length - (1 + 2)); //remove brackets and semicolon
-    let streetJSON = JSON.parse(substring); // then parse to json
+    const substring = answer.substr(1, answer.length - (1 + 2)); //remove brackets and semicolon
+    const streetJSON = JSON.parse(substring); // then parse to json
     return streetJSON['strassen'];
   }
 
   static transformStreetResponceToClass(listOfStreetJSON: any[]) {
-    let streets = [];
-    for (let streetJSON of listOfStreetJSON) {
+    const streets = [];
+    for (const streetJSON of listOfStreetJSON) {
       if (streetJSON.id !== 'false') {
-        let street = new Street(
+        const street = new Street(
           parseInt(streetJSON.id),
           streetJSON.label,
           streetJSON.value,

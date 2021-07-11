@@ -11,17 +11,17 @@ test('Test isNotEmptyString on not empty string', async () => {
 });
 
 test('Test hasNotEmptyStringFields with an empty field', async () => {
-  let key = 'A random Key';
-  let value = null;
-  let object = {[key]: value};
+  const key = 'A random Key';
+  const value = null;
+  const object = {[key]: value};
   expect(FieldHelper.hasNotEmptyStringFields(object, key)).toBe(false);
 });
 
 test('Test hasNotEmptyStringFields without empty field', async () => {
-  let key = 'A random Key';
-  let secondKey = key + '2';
-  let value = 'A filled field';
-  let object = {[key]: value, [secondKey]: value + '2'};
+  const key = 'A random Key';
+  const secondKey = key + '2';
+  const value = 'A filled field';
+  const object = {[key]: value, [secondKey]: value + '2'};
   expect(FieldHelper.hasNotEmptyStringFields(object, key, secondKey)).toBe(
     true
   );

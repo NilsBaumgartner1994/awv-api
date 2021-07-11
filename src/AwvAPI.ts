@@ -15,9 +15,9 @@ export default class AwvAPI {
   constructor() {}
 
   static async downloadAllCitiesAndStreets(year: number) {
-    let allCities = await AwvAPI.downloadAllCities(year);
-    for (let city of allCities) {
-      let allStreetsForCity = await AwvAPI.downloadAllStreetsForCity(
+    const allCities = await AwvAPI.downloadAllCities(year);
+    for (const city of allCities) {
+      const allStreetsForCity = await AwvAPI.downloadAllStreetsForCity(
         year,
         city
       );

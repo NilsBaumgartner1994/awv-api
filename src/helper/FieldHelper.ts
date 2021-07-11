@@ -11,8 +11,8 @@ export default class FieldHelper {
   }
 
   static hasNotEmptyStringFields(object: any, ...fields: string[]) {
-    for (let field of fields) {
-      let value: any = object[field];
+    for (const field of fields) {
+      const value: any = object[field];
       if (!FieldHelper.isNotEmptyString(value)) {
         return false;
       }
