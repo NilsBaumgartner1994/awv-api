@@ -9,7 +9,6 @@ import Street from './models/Street';
  * @class AwvAPI
  */
 export default class AwvAPI {
-
   static async downloadAllCitiesAndStreets(year: number) {
     const allCities = await AwvAPI.downloadAllCities(year);
     for (const city of allCities) {
@@ -29,7 +28,5 @@ export default class AwvAPI {
     return CityDownloadHelper.searchStreetOnly(year, city.id, '');
   }
 
-  static async downloadEventsForStreet(year: number, street: Street) {
-
-  }
+  static async downloadEventsForStreet(year: number, street: Street) {}
 }
