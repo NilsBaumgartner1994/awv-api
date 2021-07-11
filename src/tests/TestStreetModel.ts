@@ -24,6 +24,7 @@ test('Test street constructor', async () => {
 test('Test invalid street', async () => {
   expect(() => {
     // @ts-ignore //ignore invalid type passing
-    new Street('a', null, null, null, null, null);
+    const invalidStreet = new Street('a', null, null, null, null, null);
+    console.log(invalidStreet); //to suppress unused variable
   }).toThrow();
 });

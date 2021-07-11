@@ -27,6 +27,10 @@ export default class City {
     this.streets = streets;
   }
 
+  getStreets(){
+    return this.streets;
+  }
+
   isValid() {
     return (
       !isNaN(this.id) &&

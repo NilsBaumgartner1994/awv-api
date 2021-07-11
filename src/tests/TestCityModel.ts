@@ -20,7 +20,8 @@ test('Test city constructor', async () => {
 test('Test invalid city', async () => {
   expect(() => {
     // @ts-ignore //ignore invalid type passing
-    new City('a', null, null);
+    const invalidCity = new City('a', null, null);
+    console.log(invalidCity); //to suppress unused variable
   }).toThrow();
 });
 
@@ -35,5 +36,5 @@ test('Test city set streets', async () => {
   );
   const listOfStreets = [street];
   city.setStreets(listOfStreets);
-  expect(city.streets).toBe(listOfStreets);
+  expect(city.getStreets()).toBe(listOfStreets);
 });

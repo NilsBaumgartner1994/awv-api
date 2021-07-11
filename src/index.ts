@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-import FetchHelper from './ignoreCoverage/FetchHelper';
+import AwvAPI from "./AwvAPI";
 
-export {FetchHelper};
+export {AwvAPI};

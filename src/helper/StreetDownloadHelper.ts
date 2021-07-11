@@ -2,43 +2,14 @@
 
 import UrlHelper from './UrlHelper';
 import FetchHelper from '../ignoreCoverage/FetchHelper';
-import City from '../models/City';
 import Street from '../models/Street';
-import FieldHelper from './FieldHelper';
 
 /**
- * DownloadHelper class
+ * StreetDownloadHelper class
  *
- * @class DownloadHelper
+ * @class StreetDownloadHelper
  */
-export default class DownloadHelper {
-  static async searchCityOnly(year: number, citySearchName: string) {
-    const url = UrlHelper.getCitySearchURL(citySearchName);
-    const response = await FetchHelper.fetchWithCookie(
-      url,
-      year,
-      null,
-      null,
-      null,
-      null,
-      null
-    );
-    const listOfCityJSON = await response.json();
-    return DownloadHelper.transformCityResponceToClass(listOfCityJSON);
-  }
-
-  static transformCityResponceToClass(listOfCityJSON: any[]) {
-    const cities = [];
-    for (const cityJSON of listOfCityJSON) {
-      const city = new City(
-        parseInt(cityJSON.id),
-        cityJSON.label,
-        cityJSON.value
-      );
-      cities.push(city);
-    }
-    return cities;
-  }
+export default class StreetDownloadHelper {
 
   //Response jQuery18308012909501872008_1616924580830({"strassen":[{"id":"542","label":"Bernhardstraße","value":"Bernhardstraße","pamo":"4","siemer":"1","abfuhrbezirk":"1"});
   static async searchStreetOnly(
@@ -58,8 +29,8 @@ export default class DownloadHelper {
     );
     const answer = await response.text();
     const listOfStreetJSONRaw =
-      DownloadHelper.extractStreetJSONResponse(answer);
-    return DownloadHelper.transformStreetResponceToClass(listOfStreetJSONRaw);
+        StreetDownloadHelper.extractStreetJSONResponse(answer);
+    return StreetDownloadHelper.transformStreetResponceToClass(listOfStreetJSONRaw);
   }
 
   static extractStreetJSONResponse(answer: any) {
