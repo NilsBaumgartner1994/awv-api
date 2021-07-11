@@ -1,7 +1,7 @@
 'use strict';
-import DownloadHelper from "./helper/DownloadHelper";
-import City from "./models/City";
-import Street from "./models/Street";
+import DownloadHelper from './helper/DownloadHelper';
+import City from './models/City';
+import Street from './models/Street';
 
 /**
  * AwvAPI class
@@ -16,23 +16,22 @@ export default class AwvAPI {
 
   static async downloadAllCitiesAndStreets(year: number) {
     let allCities = await AwvAPI.downloadAllCities(year);
-    for(let city of allCities){
-      let allStreetsForCity = await AwvAPI.downloadAllStreetsForCity(year, city);
+    for (let city of allCities) {
+      let allStreetsForCity = await AwvAPI.downloadAllStreetsForCity(
+        year,
+        city
+      );
       city.setStreets(allStreetsForCity);
     }
   }
 
-  static async downloadAllCities(year: number){
-    return DownloadHelper.searchCityOnly(year, "");
+  static async downloadAllCities(year: number) {
+    return DownloadHelper.searchCityOnly(year, '');
   }
 
-  static async downloadAllStreetsForCity(year: number, city: City){
-    return DownloadHelper.searchStreetOnly(year, city.id, "");
+  static async downloadAllStreetsForCity(year: number, city: City) {
+    return DownloadHelper.searchStreetOnly(year, city.id, '');
   }
 
-  static async downloadEventsForStreet(year: number, street: Street){
-
-  }
-
-
+  static async downloadEventsForStreet(year: number, street: Street) {}
 }

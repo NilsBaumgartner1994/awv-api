@@ -9,11 +9,11 @@ const fetch = require('node-fetch');
 export default class FetchHelper {
   static getCookie(
     year: number,
-    cityId: any | "",
-    streetId: any | "",
-    abfuhrbezirkId: any | "",
-    papier: any | "",
-    abfuhrbezirkpapier: any | ""
+    cityId: any | '',
+    streetId: any | '',
+    abfuhrbezirkId: any | '',
+    papier: any | '',
+    abfuhrbezirkpapier: any | ''
   ) {
     return [
       'jahr=' +

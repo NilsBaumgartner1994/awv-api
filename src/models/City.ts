@@ -1,6 +1,6 @@
 'use strict';
-import Street from "./Street";
-import FieldHelper from "../helper/FieldHelper";
+import Street from './Street';
+import FieldHelper from '../helper/FieldHelper';
 
 /**
  * City class
@@ -12,23 +12,25 @@ export default class City {
   label: string;
   value: string;
   streets: Street[];
-  
+
   constructor(id: number, label: string, value: string) {
     this.id = id;
     this.label = label;
     this.value = value;
     this.streets = [];
-    if(!this.isValid()){
-      throw new Error("City is not valid!");
+    if (!this.isValid()) {
+      throw new Error('City is not valid!');
     }
   }
 
-  setStreets(streets: Street[]){
+  setStreets(streets: Street[]) {
     this.streets = streets;
   }
 
-  isValid(){
-    return !isNaN(this.id) && FieldHelper.hasNotEmptyStringFields(this, "label", "value");
+  isValid() {
+    return (
+      !isNaN(this.id) &&
+      FieldHelper.hasNotEmptyStringFields(this, 'label', 'value')
+    );
   }
-
 }
