@@ -8,7 +8,7 @@
     "coverage": "jest --coverage",
     "test": "pwd && npm run build && npm run testOnly",
     "testOnly": "npm run coverage",
-    "start": "npm run build && node ./build/development.js",
+    "start": "npm run build && node ./build/ignoreCoverage/development.js",
     "_prepareBuild": "rm -rf ./build",
     "build": "npm run _prepareBuild && rimraf ./build && tsc && cp package.json ./build && cp README.md ./build",
     "dev": "nodemon",
@@ -44,6 +44,7 @@
   "devDependencies": {
     "@types/jest": "^26.0.23",
     "@types/node": "^16.0.0",
+    "faker": "^5.5.3",
     "coveralls": "^3.1.1",
     "gts": "^3.1.0",
     "jest": "^27.0.6",

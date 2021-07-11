@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 'use strict';
 const fetch = require('node-fetch');
 
@@ -9,12 +8,12 @@ const fetch = require('node-fetch');
  */
 export default class FetchHelper {
   static getCookie(
-    year: string,
-    cityId: string,
-    streetId: string,
-    abfuhrbezirkId: string,
-    papier: string,
-    abfuhrbezirkpapier: string
+    year: number,
+    cityId: any | "",
+    streetId: any | "",
+    abfuhrbezirkId: any | "",
+    papier: any | "",
+    abfuhrbezirkpapier: any | ""
   ) {
     return [
       'jahr=' +
@@ -34,12 +33,12 @@ export default class FetchHelper {
 
   static async fetchWithCookie(
     url: string,
-    year: string,
-    cityId: string,
-    streetId: string,
-    abfuhrbezirkId: string,
-    papier: string,
-    abfuhrbezirkpapier: string
+    year: number,
+    cityId: any,
+    streetId: any,
+    abfuhrbezirkId: any,
+    papier: any,
+    abfuhrbezirkpapier: any
   ) {
     const cookie = FetchHelper.getCookie(
       year,
@@ -49,7 +48,7 @@ export default class FetchHelper {
       papier,
       abfuhrbezirkpapier
     );
-    return await fetch(url, {
+    return fetch(url, {
       method: 'GET',
       headers: {
         cookie: cookie,
