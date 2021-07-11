@@ -45,9 +45,6 @@ jobs:
       - name: Install Node.js dependencies
         run: npm ci
 
-      - name: Run Tests
-        run: npm ci
-
       - name: Test
         run: npm run testOnly
 
