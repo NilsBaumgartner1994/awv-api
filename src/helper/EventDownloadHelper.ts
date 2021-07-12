@@ -13,6 +13,7 @@ import Street from '../models/Street';
  */
 export default class EventDownloadHelper {
   static async downloadEventsForCities(year: number, cities: City[]) {
+    console.log("Test");
     let events: Event[] = [];
     for (const city of cities) {
       const cityEvents = await EventDownloadHelper.downloadEventsForCity(
