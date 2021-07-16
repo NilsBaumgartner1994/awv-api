@@ -1,5 +1,5 @@
 'use strict';
-import CityDownloadHelper from './helper/DownloadHelper';
+import CityDownloadHelper from './helper/CityDownloadHelper';
 import City from './models/City';
 import Street from './models/Street';
 
