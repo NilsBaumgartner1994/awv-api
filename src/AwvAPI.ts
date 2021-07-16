@@ -25,7 +25,7 @@ export default class AwvAPI {
   }
 
   static async downloadAllStreetsForCity(year: number, city: City) {
-    return CityDownloadHelper.searchStreetOnly(year, city.id, '');
+    //return CityDownloadHelper.searchStreetOnly(year, city.id, '');
   }
 
   static async downloadEventsForStreet(year: number, street: Street) {}
