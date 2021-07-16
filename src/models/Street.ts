@@ -1,6 +1,8 @@
 'use strict';
 
 import FieldHelper from '../helper/FieldHelper';
+import Event from "./Event";
+import {Provider} from "./Provider";
 
 /**
  * Street class
@@ -14,6 +16,7 @@ export default class Street {
   pamo: string;
   siemer: string;
   abfuhrbezirk: string;
+  events: Event[];
 
   constructor(
     id: number,
@@ -29,8 +32,26 @@ export default class Street {
     this.pamo = pamo;
     this.siemer = siemer;
     this.abfuhrbezirk = abfuhrbezirk;
+    this.events = [];
     if (!this.isValid()) {
       throw new Error('Street is not valid! ' + this.toString());
+    }
+  }
+
+  getEvents(){
+    return this.events;
+  }
+
+  setEvents(events: Event[]){
+    this.events = events;
+  }
+
+  getProviderValue(provider: Provider){
+    switch (provider){
+      case Provider.VECHTA: return "";
+      case Provider.PAMO: return this.pamo;
+      case Provider.SIEMER: return this.siemer;
+      default: return "";
     }
   }
 

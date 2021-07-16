@@ -7,11 +7,12 @@ import FieldHelper from '../helper/FieldHelper';
  * @class Event
  */
 export default class Event {
-  date: Date;
+
+  date: string;
   label: string;
   provider: string;
 
-  constructor(date: Date, label: string, provider: string) {
+  constructor(date: string, label: string, provider: string) {
     this.date = date;
     this.label = label;
     this.provider = provider
@@ -22,8 +23,13 @@ export default class Event {
 
   isValid() {
     return (
-        Object.prototype.toString.call(this.date) === '[object Date]' && //check if valid date //https://stackoverflow.com/questions/643782/how-to-check-whether-an-object-is-a-date
-      FieldHelper.hasNotEmptyStringFields(this, 'label', 'provider')
+      FieldHelper.hasNotEmptyStringFields(this, 'date','label', 'provider')
     );
   }
+
+  getDate() : Date{
+    let splits = this.date.split(".");
+    return new Date(splits[3]+"-"+splits[1]+"-"+splits[0]);
+  }
+
 }

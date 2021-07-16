@@ -1,5 +1,6 @@
 'use strict';
-import CityDownloadHelper from './helper/DownloadHelper';
+import CityDownloadHelper from './helper/CityDownloadHelper';
+import StreetDownloadHelper from './helper/StreetDownloadHelper';
 import City from './models/City';
 import Street from './models/Street';
 
@@ -26,7 +27,7 @@ export default class AwvAPI {
   }
 
   static async downloadAllStreetsForCity(year: number, city: City) {
-    return CityDownloadHelper.searchStreetOnly(year, city.id, '');
+    return StreetDownloadHelper.searchStreetOnly(year, city.id, '');
   }
 
   static async downloadEventsForStreet(year: number, street: Street) {

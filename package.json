@@ -44,8 +44,8 @@
   "devDependencies": {
     "@types/jest": "^26.0.23",
     "@types/node": "^16.0.0",
-    "faker": "^5.5.3",
     "coveralls": "^3.1.1",
+    "faker": "^5.5.3",
     "gts": "^3.1.0",
     "jest": "^27.0.6",
     "nodemon": "^2.0.9",
@@ -56,6 +56,7 @@
   },
   "dependencies": {
     "@babel/preset-typescript": "^7.14.5",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "node-html-parser": "^4.1.0"
   }
 }
