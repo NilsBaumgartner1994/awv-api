@@ -14,7 +14,7 @@ import Street from '../models/Street';
 export default class EventDownloadHelper {
   static async downloadEventsForCities(year: number, cities: City[]) {
     let events: Event[] = [];
-   
+
     return events;
   }
 }
