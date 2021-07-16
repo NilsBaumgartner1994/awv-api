@@ -16,7 +16,7 @@
     "_uploadBuild": "cd ./build && npm pack && npm publish && cd ..",
     "_uploadWithoutPatch": "npm run _prepareUpload && npm run _uploadBuild && npm run clean",
     "upload": "npm version patch && npm run _uploadWithoutPatch",
-    "clean": "rm -rf ./build && gts clean",
+    "clean": "gts clean",
     "lint": "gts lint",
     "fix": "gts fix"
   },
