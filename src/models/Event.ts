@@ -7,7 +7,6 @@ import FieldHelper from '../helper/FieldHelper';
  * @class Event
  */
 export default class Event {
-
   date: string;
   label: string;
   provider: string;
@@ -22,14 +21,16 @@ export default class Event {
   }
 
   isValid() {
-    return (
-      FieldHelper.hasNotEmptyStringFields(this, 'date','label', 'provider')
+    return FieldHelper.hasNotEmptyStringFields(
+      this,
+      'date',
+      'label',
+      'provider'
     );
   }
 
-  getDate() : Date{
-    let splits = this.date.split(".");
-    return new Date(splits[3]+"-"+splits[1]+"-"+splits[0]);
+  getDate(): Date {
+    let splits = this.date.split('.');
+    return new Date(splits[3] + '-' + splits[1] + '-' + splits[0]);
   }
-
 }

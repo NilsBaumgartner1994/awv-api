@@ -1,6 +1,6 @@
 'use strict';
 
-import {Provider} from "../models/Provider";
+import {Provider} from '../models/Provider';
 
 /**
  * UrlHelper class
@@ -19,12 +19,16 @@ export default class UrlHelper {
     return UrlHelper.SEARCH_CITY_URL + containsLetter;
   }
 
-  static getProviderSearchField(provider: Provider){
-    switch (provider){
-      case Provider.VECHTA: return "";
-      case Provider.PAMO: return "pamo";
-      case Provider.SIEMER: return "siemer";
-      default: return "";
+  static getProviderSearchField(provider: Provider) {
+    switch (provider) {
+      case Provider.VECHTA:
+        return '';
+      case Provider.PAMO:
+        return 'pamo';
+      case Provider.SIEMER:
+        return 'siemer';
+      default:
+        return '';
     }
   }
 

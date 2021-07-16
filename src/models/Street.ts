@@ -1,8 +1,8 @@
 'use strict';
 
 import FieldHelper from '../helper/FieldHelper';
-import Event from "./Event";
-import {Provider} from "./Provider";
+import Event from './Event';
+import {Provider} from './Provider';
 
 /**
  * Street class
@@ -38,20 +38,24 @@ export default class Street {
     }
   }
 
-  getEvents(){
+  getEvents() {
     return this.events;
   }
 
-  setEvents(events: Event[]){
+  setEvents(events: Event[]) {
     this.events = events;
   }
 
-  getProviderValue(provider: Provider){
-    switch (provider){
-      case Provider.VECHTA: return "";
-      case Provider.PAMO: return this.pamo;
-      case Provider.SIEMER: return this.siemer;
-      default: return "";
+  getProviderValue(provider: Provider) {
+    switch (provider) {
+      case Provider.VECHTA:
+        return '';
+      case Provider.PAMO:
+        return this.pamo;
+      case Provider.SIEMER:
+        return this.siemer;
+      default:
+        return '';
     }
   }
 

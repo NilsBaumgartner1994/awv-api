@@ -1,5 +1,5 @@
 'use strict';
-import FakeBackend from "./FakeBackend";
+import FakeBackend from './FakeBackend';
 
 const fetch = require('node-fetch');
 
@@ -51,15 +51,17 @@ export default class FetchHelper {
       abfuhrbezirkpapier
     );
 
-    if(FakeBackend.IS_ACTIVE)
-    {
-      return FakeBackend.fakeFetch(url, year,
-          cityId,
-          streetId,
-          abfuhrbezirkId,
-          papier,
-          abfuhrbezirkpapier);
-    }  else {
+    if (FakeBackend.IS_ACTIVE) {
+      return FakeBackend.fakeFetch(
+        url,
+        year,
+        cityId,
+        streetId,
+        abfuhrbezirkId,
+        papier,
+        abfuhrbezirkpapier
+      );
+    } else {
       return fetch(url, {
         method: 'GET',
         headers: {
