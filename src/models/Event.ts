@@ -15,7 +15,7 @@ export default class Event {
   constructor(date: string, label: string, provider: string) {
     this.date = date;
     this.label = label;
-    this.provider = provider
+    this.provider = provider;
     if (!this.isValid()) {
       throw new Error('Event is not valid!');
     }
