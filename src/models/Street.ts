@@ -54,8 +54,6 @@ export default class Street {
         return this.pamo;
       case Provider.SIEMER:
         return this.siemer;
-      default:
-        return '';
     }
   }
 

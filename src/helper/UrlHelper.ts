@@ -27,8 +27,6 @@ export default class UrlHelper {
         return 'pamo';
       case Provider.SIEMER:
         return 'siemer';
-      default:
-        return '';
     }
   }
 
