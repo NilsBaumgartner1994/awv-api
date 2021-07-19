@@ -4,6 +4,6 @@
     "sourceType": "module"
   },
   "rules": {
-    "indent": [4, 4, { "SwitchCase": 2}]
+    "indent": 2
   }
 }
