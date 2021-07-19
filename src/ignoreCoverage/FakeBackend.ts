@@ -35,7 +35,7 @@ export default class FakeBackend {
     papier: any,
     abfuhrbezirkpapier: any
   ): Event[] {
-    let fakeEvents: Event[] = [
+    const fakeEvents: Event[] = [
       new Event('05.01.' + year, 'Restabfall', Provider.VECHTA),
       new Event('12.01.' + year, 'Bioabfall', Provider.VECHTA),
       new Event('18.01.' + year, 'Gelbe Tonne', Provider.VECHTA),
@@ -72,7 +72,7 @@ export default class FakeBackend {
     papier: any,
     abfuhrbezirkpapier: any
   ) {
-    let fakeEvents = FakeBackend.getFakeEventsResult(
+    const fakeEvents = FakeBackend.getFakeEventsResult(
       url,
       year,
       cityId,
@@ -84,9 +84,9 @@ export default class FakeBackend {
     return {
       text: () => {
         let html = '<span class="an_other_class">01.02. : Restmüll</span>'; //to be ignored
-        for (let event of fakeEvents) {
-          let dateString = event.date.substr(0, 5);
-          let label = event.label;
+        for (const event of fakeEvents) {
+          const dateString = event.date.substr(0, 5);
+          const label = event.label;
           html +=
             '<span class="month_termin">' +
             dateString +
@@ -114,9 +114,9 @@ export default class FakeBackend {
   ) {
     return {
       json: () => {
-        let fakeCities = FakeBackend.getFakeCities();
-        let cityList = [];
-        for (let city of fakeCities) {
+        const fakeCities = FakeBackend.getFakeCities();
+        const cityList = [];
+        for (const city of fakeCities) {
           cityList.push({
             id: city.id + '',
             label: city.label,
@@ -144,9 +144,9 @@ export default class FakeBackend {
   ) {
     return {
       text: () => {
-        let fakeStreets = FakeBackend.getFakeStreets();
-        let streetList: any = [];
-        for (let street of fakeStreets) {
+        const fakeStreets = FakeBackend.getFakeStreets();
+        const streetList: any = [];
+        for (const street of fakeStreets) {
           streetList.push({
             id: street.id + '',
             label: street.label,
@@ -156,8 +156,8 @@ export default class FakeBackend {
             abfuhrbezirk: street.abfuhrbezirk,
           });
         }
-        let streetsJSON = {strassen: streetList};
-        let response = '(' + JSON.stringify(streetsJSON) + ');';
+        const streetsJSON = {strassen: streetList};
+        const response = '(' + JSON.stringify(streetsJSON) + ');';
         return response;
       },
     };

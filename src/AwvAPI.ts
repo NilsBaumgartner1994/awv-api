@@ -15,7 +15,7 @@ export default class AwvAPI {
   static async downloadAllCitiesAndStreetsAndEvents(
     year: number
   ): Promise<City[]> {
-    let allCities = await AwvAPI.downloadAllCitiesAndStreets(year);
+    const allCities = await AwvAPI.downloadAllCitiesAndStreets(year);
     return EventDownloadHelper.downloadEventsAndAddToCities(year, allCities);
   }
 

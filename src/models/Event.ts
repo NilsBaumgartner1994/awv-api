@@ -30,7 +30,7 @@ export default class Event {
   }
 
   getDate(): Date {
-    let splits = this.date.split('.');
+    const splits = this.date.split('.');
     return new Date(splits[3] + '-' + splits[1] + '-' + splits[0]);
   }
 }

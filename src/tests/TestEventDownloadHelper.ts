@@ -2,7 +2,6 @@ import EventDownloadHelper from '../helper/EventDownloadHelper';
 import City from '../models/City';
 import Street from '../models/Street';
 import FakeBackend from '../ignoreCoverage/FakeBackend';
-import UrlHelper from '../helper/UrlHelper';
 import Event from '../models/Event';
 import {Provider} from '../models/Provider';
 
@@ -17,11 +16,11 @@ const street = new Street(
 );
 
 test('Test downloadEventsAndAddToCities', async () => {
-  let streets = [street, street];
+  const streets = [street, street];
   city.setStreets(streets);
-  let cities = [city, city];
+  const cities = [city, city];
 
-  let year = 2021;
+  const year = 2021;
 
   FakeBackend.IS_ACTIVE = true;
   const citiesWithEvents =
@@ -30,17 +29,17 @@ test('Test downloadEventsAndAddToCities', async () => {
 
   expect(citiesWithEvents).toBeTruthy();
   expect(citiesWithEvents.length).toBe(cities.length);
-  for (let cityWithEvents of citiesWithEvents) {
-    let streetsWithEvents = cityWithEvents.getStreets();
+  for (const cityWithEvents of citiesWithEvents) {
+    const streetsWithEvents = cityWithEvents.getStreets();
     expect(streetsWithEvents).toBeTruthy();
     expect(streetsWithEvents.length).toBe(streets.length);
-    for (let streetWithEvents of streetsWithEvents) {
-      let events = streetWithEvents.getEvents();
-      let expectedFakeResults = FakeBackend.getFakeEvents();
+    for (const streetWithEvents of streetsWithEvents) {
+      const events = streetWithEvents.getEvents();
+      const expectedFakeResults = FakeBackend.getFakeEvents();
       expect(events.length).toBe(expectedFakeResults.length);
       for (let i = 0; i < events.length; i++) {
-        let receivedEvent: Event = events[i];
-        let expectedEvent: Event = expectedFakeResults[i];
+        const receivedEvent: Event = events[i];
+        const expectedEvent: Event = expectedFakeResults[i];
         expect(receivedEvent.toString() === expectedEvent.toString());
       }
     }
@@ -57,7 +56,7 @@ test('Test downloadEvents', async () => {
     '1'
   );
 
-  let year = 2021;
+  const year = 2021;
 
   FakeBackend.IS_ACTIVE = true;
   const events = await EventDownloadHelper.downloadEventsForStreet(
@@ -68,7 +67,7 @@ test('Test downloadEvents', async () => {
   FakeBackend.IS_ACTIVE = false;
 
   expect(events).toBeTruthy();
-  for (let event of events) {
+  for (const event of events) {
     expect(event.provider !== Provider.SIEMER).toBeTruthy();
   }
 });

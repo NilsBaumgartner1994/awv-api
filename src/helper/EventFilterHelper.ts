@@ -17,8 +17,8 @@ export default class EventFilterHelper {
   static parseListOfEventsToDict(listOfEvents: Event[]): {
     [key: string]: Event;
   } {
-    let dictDateLabelStrings: {[key: string]: Event} = {};
-    for (let event of listOfEvents) {
+    const dictDateLabelStrings: {[key: string]: Event} = {};
+    for (const event of listOfEvents) {
       const key: string = EventFilterHelper.eventToComparableString(event);
       dictDateLabelStrings[key] = event;
     }
@@ -31,8 +31,8 @@ export default class EventFilterHelper {
   }
 
   static compareEvent(a: Event, b: Event) {
-    let dateOfA = a.getDate();
-    let dateOfB = b.getDate();
+    const dateOfA = a.getDate();
+    const dateOfB = b.getDate();
     return dateOfA.getTime() - dateOfB.getTime();
   }
 }
