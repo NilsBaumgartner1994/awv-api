@@ -13,9 +13,7 @@ import EventDownloadHelper from './helper/EventDownloadHelper';
 export default class AwvAPI {
   static async downloadAllCitiesAndStreetsAndEvents(year: number) {
     let allCities = await AwvAPI.downloadAllCitiesAndStreets(year);
-    let citiesWithEvents =
-      await EventDownloadHelper.downloadEventsAndAddToCities(year, allCities);
-    return citiesWithEvents;
+    return EventDownloadHelper.downloadEventsAndAddToCities(year, allCities);
   }
 
   static async downloadAllCitiesAndStreets(year: number) {
