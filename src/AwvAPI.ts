@@ -3,6 +3,7 @@ import CityDownloadHelper from './helper/CityDownloadHelper';
 import StreetDownloadHelper from './helper/StreetDownloadHelper';
 import City from './models/City';
 import Street from './models/Street';
+import Event from './models/Event';
 import EventDownloadHelper from './helper/EventDownloadHelper';
 
 /**
@@ -42,7 +43,7 @@ export default class AwvAPI {
     year: number,
     city: City,
     street: Street
-  ): Promise<Street> {
-    return EventDownloadHelper.downloadEventsAndAddToStreet(year, city, street);
+  ): Promise<Event[]> {
+    return EventDownloadHelper.downloadEventsForStreet(year, city, street);
   }
 }
