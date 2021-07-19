@@ -11,7 +11,9 @@ import EventDownloadHelper from './helper/EventDownloadHelper';
  * @class AwvAPI
  */
 export default class AwvAPI {
-  static async downloadAllCitiesAndStreetsAndEvents(year: number): Promise<City[]> {
+  static async downloadAllCitiesAndStreetsAndEvents(
+    year: number
+  ): Promise<City[]> {
     let allCities = await AwvAPI.downloadAllCitiesAndStreets(year);
     return EventDownloadHelper.downloadEventsAndAddToCities(year, allCities);
   }
@@ -40,7 +42,7 @@ export default class AwvAPI {
     year: number,
     city: City,
     street: Street
-  ) : Promise<Street> {
+  ): Promise<Street> {
     return EventDownloadHelper.downloadEventsAndAddToStreet(year, city, street);
   }
 }

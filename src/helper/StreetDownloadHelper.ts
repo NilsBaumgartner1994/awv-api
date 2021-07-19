@@ -3,7 +3,7 @@
 import UrlHelper from './UrlHelper';
 import FetchHelper from '../ignoreCoverage/FetchHelper';
 import Street from '../models/Street';
-import City from "../models/City";
+import City from '../models/City';
 
 /**
  * StreetDownloadHelper class

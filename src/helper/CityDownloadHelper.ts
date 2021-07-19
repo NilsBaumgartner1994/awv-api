@@ -10,7 +10,10 @@ import City from '../models/City';
  * @class CityDownloadHelper
  */
 export default class CityDownloadHelper {
-  static async searchCityOnly(year: number, citySearchContainsName: string): Promise<City[]> {
+  static async searchCityOnly(
+    year: number,
+    citySearchContainsName: string
+  ): Promise<City[]> {
     const url = UrlHelper.getCitySearchURL(citySearchContainsName);
     const response = await FetchHelper.fetchWithCookie(
       url,
