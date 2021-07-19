@@ -45,31 +45,33 @@ Since https://www.abfallwirtschaft-vechta.de/ is not offering an open and simple
 
 ## Installation
 
-````
+```
 npm install awv-api
-````
+```
 
 ## Usage
 
-````
+```
 import {AwvAPI} from "awv-api";
 
 const allCities = await AwvAPI.downloadAllCities(year);
 //or any other Function
-````
+```
 
 ## Models
 
 ### City
-````
+
+```
 city.id : number // the id of the city
 city.label : string // the display name of the city
 city.value : string // the name of the city
 city.getStreets() : Street[] // returns all associated streets
-````
+```
 
 ### Street
-````
+
+```
 street.id : number // the id of the street
 street.label : string // the display name of the city
 street.value : string // the name of the city
@@ -77,26 +79,30 @@ street.pamo: string // the district for pamo, 0 if not available
 street.siemer: string // the district for siemer, 0 if not available
 street.abfuhrbezirk: string // the district for the normal
 street.getEvents() : Event[] // returns all associated events
-````
+```
 
 ### Event
-````
+
+```
 event.date: string // the date as String DD.MM.YYYY when the event happens
 event.label: string // the trash which gets picked up
 event.provider: string // the name of the provider
-````
+```
 
 ### Provider
+
 An enum:
-````
+
+```
 VECHTA = 'AVZ Vechta'
 SIEMER = 'Siemer'
 PAMO = 'Pamo'
-````
+```
 
 ## Documentation
 
 ### params:
+
 - year: number (for example: 2021)
 - city: City (see /models/City.ts)
 - street: Street (see /models/Street.ts)
@@ -105,8 +111,8 @@ PAMO = 'Pamo'
 ### functions
 
 - AwvAPI.downloadAllCitiesAndStreetsAndEvents(year)
-  - Downloads all cities and streets and events as a list of cities
 
+  - Downloads all cities and streets and events as a list of cities
 
 - AwvAPI.downloadAllCitiesAndStreets(year)
   - Downloads all cities and streets
@@ -116,7 +122,6 @@ PAMO = 'Pamo'
   - Downloads all streets for a city
 - AwvAPI.downloadEventsForStreet(year, city, street)
   - Downloads all events for a specific street in a city
-
 
 ## Contributors
 
