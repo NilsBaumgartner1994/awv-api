@@ -3,14 +3,14 @@
 </h2>
 
 <p align="center">
-  <a href="https://badge.fury.io/js/consys.svg"><img src="https://badge.fury.io/js/consys.svg" alt="npm package" /></a>
+  <a href="https://badge.fury.io/js/awv-api.svg"><img src="https://badge.fury.io/js/awv-api.svg" alt="npm package" /></a>
   <a href="https://img.shields.io/github/license/NilsBaumgartner1994/awv-api"><img src="https://img.shields.io/github/license/NilsBaumgartner1994/awv-api" alt="MIT" /></a>
   <a href="https://img.shields.io/github/last-commit/NilsBaumgartner1994/awv-api?logo=git"><img src="https://img.shields.io/github/last-commit/NilsBaumgartner1994/awv-api?logo=git" alt="last commit" /></a>
-  <a href="https://www.npmjs.com/package/consys"><img src="https://img.shields.io/npm/dm/consys.svg" alt="downloads week" /></a>
-  <a href="https://www.npmjs.com/package/consys"><img src="https://img.shields.io/npm/dt/consys.svg" alt="downloads total" /></a>
+  <a href="https://www.npmjs.com/package/awv-api"><img src="https://img.shields.io/npm/dm/awv-api.svg" alt="downloads week" /></a>
+  <a href="https://www.npmjs.com/package/awv-api"><img src="https://img.shields.io/npm/dt/awv-api.svg" alt="downloads total" /></a>
   <a href="https://github.com/NilsBaumgartner1994/awv-api"><img src="https://shields.io/github/languages/code-size/NilsBaumgartner1994/awv-api" alt="size" /></a>
   <a href="https://david-dm.org/NilsBaumgartner1994/awv-apig"><img src="https://david-dm.org/NilsBaumgartner1994/awv-api/status.svg" alt="dependencies" /></a>
-  <a href="https://app.fossa.com/projects/git%2Bgithub.com%2FFireboltCasters%2Fconsys?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FFireboltCasters%2Fconsys.svg?type=shield"/></a>
+  <a href="https://app.fossa.com/projects/git%2Bgithub.com%2FNilsBaumgartner1994%2Fawv-api?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FNilsBaumgartner1994%2Fawv-api.svg?type=shield"/></a>
   <a href="https://github.com/google/gts" alt="Google TypeScript Style"><img src="https://img.shields.io/badge/code%20style-google-blueviolet.svg"/></a>
   <a href="https://shields.io/" alt="Google TypeScript Style"><img src="https://img.shields.io/badge/uses-TypeScript-blue.svg"/></a>
   <a href="https://github.com/marketplace/actions/lint-action"><img src="https://img.shields.io/badge/uses-Lint%20Action-blue.svg"/></a>
