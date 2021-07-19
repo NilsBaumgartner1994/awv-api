@@ -1,7 +1,7 @@
 import AwvAPI from '../AwvAPI';
 import FakeBackend from '../ignoreCoverage/FakeBackend';
-import Street from "../models/Street";
-import City from "../models/City";
+import Street from '../models/Street';
+import City from '../models/City';
 
 const year = 2021;
 
@@ -54,16 +54,19 @@ test('Test downloadEventsForStreet with real backend', async () => {
     siemer: '1',
     abfuhrbezirk: '1',
   };
-  const street = new Street(streetRaw.id, streetRaw.label, streetRaw.value, streetRaw.pamo, streetRaw.siemer, streetRaw.abfuhrbezirk);
+  const street = new Street(
+    streetRaw.id,
+    streetRaw.label,
+    streetRaw.value,
+    streetRaw.pamo,
+    streetRaw.siemer,
+    streetRaw.abfuhrbezirk
+  );
 
-  const cityRaw = { id: 3, label: 'Dinklage', value: 'Dinklage', streets: [] };
+  const cityRaw = {id: 3, label: 'Dinklage', value: 'Dinklage', streets: []};
   const city = new City(cityRaw.id, cityRaw.value, cityRaw.value);
 
-  const events = await AwvAPI.downloadEventsForStreet(
-      year,
-      city,
-      street
-  );
+  const events = await AwvAPI.downloadEventsForStreet(year, city, street);
 
   expect(events).toBeTruthy();
   expect(events.length > 0).toBeTruthy();
