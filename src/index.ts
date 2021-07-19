@@ -11,4 +11,4 @@ export {City};
 export {Street};
 export {Event};
 export {Provider};
-export {EventHelper}
+export {EventHelper};

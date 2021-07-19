@@ -31,11 +31,7 @@ test('Test downloadEventsForStreet', async () => {
   const fakeStreet = FakeBackend.getFakeStreets()[0];
 
   FakeBackend.IS_ACTIVE = true;
-  let events = await AwvAPI.downloadEventsForStreet(
-    year,
-    fakeCity,
-    fakeStreet
-  );
+  let events = await AwvAPI.downloadEventsForStreet(year, fakeCity, fakeStreet);
   FakeBackend.IS_ACTIVE = false;
 
   expect(events).toBeTruthy();
