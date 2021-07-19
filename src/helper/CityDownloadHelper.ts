@@ -10,7 +10,7 @@ import City from '../models/City';
  * @class CityDownloadHelper
  */
 export default class CityDownloadHelper {
-  static async searchCityOnly(year: number, citySearchContainsName: string) {
+  static async searchCityOnly(year: number, citySearchContainsName: string): Promise<City[]> {
     const url = UrlHelper.getCitySearchURL(citySearchContainsName);
     const response = await FetchHelper.fetchWithCookie(
       url,
@@ -25,8 +25,8 @@ export default class CityDownloadHelper {
     return CityDownloadHelper.transformCityResponceToClass(listOfCityJSON);
   }
 
-  static transformCityResponceToClass(listOfCityJSON: any[]) {
-    const cities = [];
+  static transformCityResponceToClass(listOfCityJSON: any[]): City[] {
+    const cities: City[] = [];
     for (const cityJSON of listOfCityJSON) {
       const city = new City(
         parseInt(cityJSON.id),

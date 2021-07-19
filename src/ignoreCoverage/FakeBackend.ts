@@ -3,6 +3,8 @@
 import Event from '../models/Event';
 import {Provider} from '../models/Provider';
 import UrlHelper from '../helper/UrlHelper';
+import City from "../models/City";
+import Street from "../models/Street";
 
 /**
  * FakeBackend class
@@ -11,6 +13,18 @@ import UrlHelper from '../helper/UrlHelper';
  */
 export default class FakeBackend {
   static IS_ACTIVE = false;
+
+  static getFakeEvents(){
+    return FakeBackend.getFakeEventsResult(
+        UrlHelper.CALENDAR_URL,
+        2021,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+    );
+  }
 
   static getFakeEventsResult(
     url: string,
@@ -85,6 +99,66 @@ export default class FakeBackend {
     };
   }
 
+  static getFakeCities() : City[]{
+    return [new City(3, "Dinklage", "Dinklage")];
+  }
+
+  static returnFakeCitySearchRequest(    url: string,
+                                         year: number,
+                                         cityId: any,
+                                         streetId: any,
+                                         abfuhrbezirkId: any,
+                                         papier: any,
+                                         abfuhrbezirkpapier: any){
+    return {
+      json: () => {
+        let fakeCities = FakeBackend.getFakeCities();
+        let cityList = [];
+        for(let city of fakeCities){
+          cityList.push({
+            "id": city.id+"",
+            "label": city.label,
+            "value": city.value
+          });
+        }
+
+        return cityList;
+      }
+    }
+  }
+
+  static getFakeStreets() : Street[]{
+    return [new Street(354, "Musterstrasse", "Musterstrasse", "1", "2", "1")];
+  }
+
+  static returnFakeStreetSearchRequest(    url: string,
+                                           year: number,
+                                           cityId: any,
+                                           streetId: any,
+                                           abfuhrbezirkId: any,
+                                           papier: any,
+                                           abfuhrbezirkpapier: any){
+    return {
+      text: () => {
+        let fakeStreets = FakeBackend.getFakeStreets();
+        let streetList: any = [];
+        for(let street of fakeStreets){
+          streetList.push({
+            id:street.id+"",
+            label:street.label,
+            value:street.value,
+            pamo:street.pamo,
+            siemer:street.siemer,
+            abfuhrbezirk:street.abfuhrbezirk
+          });
+        }
+        let streetsJSON = {strassen: streetList};
+        let response = "("+JSON.stringify(streetsJSON)+");";
+        return response;
+      }
+    }
+  }
+
   static async fakeFetch(
     url: string,
     year: number,
@@ -94,7 +168,24 @@ export default class FakeBackend {
     papier: any,
     abfuhrbezirkpapier: any
   ) {
-    if (url === UrlHelper.CALENDAR_URL) {
+    if(url.startsWith(UrlHelper.SEARCH_STREET_BASE_URL)){
+      return FakeBackend.returnFakeStreetSearchRequest( url,
+          year,
+          cityId,
+          streetId,
+          abfuhrbezirkId,
+          papier,
+          abfuhrbezirkpapier);
+    }
+    if(url.startsWith(UrlHelper.SEARCH_CITY_URL)){
+      return FakeBackend.returnFakeCitySearchRequest(        url,
+          year,
+          cityId,
+          streetId,
+          abfuhrbezirkId,
+          papier,
+          abfuhrbezirkpapier);
+    } else if (url === UrlHelper.CALENDAR_URL) {
       return FakeBackend.returnFakeEventsRequest(
         url,
         year,

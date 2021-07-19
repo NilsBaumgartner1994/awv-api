@@ -3,6 +3,7 @@
 import UrlHelper from './UrlHelper';
 import FetchHelper from '../ignoreCoverage/FetchHelper';
 import Street from '../models/Street';
+import City from "../models/City";
 
 /**
  * StreetDownloadHelper class
@@ -15,7 +16,7 @@ export default class StreetDownloadHelper {
     year: number,
     cityId: number,
     streetSearchContainsName: string
-  ) {
+  ): Promise<Street[]> {
     const url = UrlHelper.getStreetSearchURL(cityId, streetSearchContainsName);
     const response = await FetchHelper.fetchWithCookie(
       url,
@@ -40,7 +41,7 @@ export default class StreetDownloadHelper {
     return streetJSON['strassen'];
   }
 
-  static transformStreetResponceToClass(listOfStreetJSON: any[]) {
+  static transformStreetResponceToClass(listOfStreetJSON: any[]): Street[] {
     const streets = [];
     for (const streetJSON of listOfStreetJSON) {
       if (streetJSON.id !== 'false') {

@@ -36,15 +36,7 @@ test('Test downloadEventsAndAddToCities', async () => {
     expect(streetsWithEvents.length).toBe(streets.length);
     for (let streetWithEvents of streetsWithEvents) {
       let events = streetWithEvents.getEvents();
-      let expectedFakeResults = FakeBackend.getFakeEventsResult(
-        UrlHelper.CALENDAR_URL,
-        year,
-        -1,
-        -1,
-        -1,
-        -1,
-        -1
-      );
+      let expectedFakeResults = FakeBackend.getFakeEvents();
       expect(events.length).toBe(expectedFakeResults.length);
       for (let i = 0; i < events.length; i++) {
         let receivedEvent: Event = events[i];

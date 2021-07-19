@@ -11,12 +11,12 @@ import EventDownloadHelper from './helper/EventDownloadHelper';
  * @class AwvAPI
  */
 export default class AwvAPI {
-  static async downloadAllCitiesAndStreetsAndEvents(year: number) {
+  static async downloadAllCitiesAndStreetsAndEvents(year: number): Promise<City[]> {
     let allCities = await AwvAPI.downloadAllCitiesAndStreets(year);
     return EventDownloadHelper.downloadEventsAndAddToCities(year, allCities);
   }
 
-  static async downloadAllCitiesAndStreets(year: number) {
+  static async downloadAllCitiesAndStreets(year: number): Promise<City[]> {
     const allCities = await AwvAPI.downloadAllCities(year);
     for (const city of allCities) {
       const allStreetsForCity = await AwvAPI.downloadAllStreetsForCity(
@@ -28,7 +28,7 @@ export default class AwvAPI {
     return allCities;
   }
 
-  static async downloadAllCities(year: number) {
+  static async downloadAllCities(year: number): Promise<City[]> {
     return CityDownloadHelper.searchCityOnly(year, '');
   }
 
@@ -40,7 +40,7 @@ export default class AwvAPI {
     year: number,
     city: City,
     street: Street
-  ) {
-    await EventDownloadHelper.downloadEventsAndAddToStreet(year, city, street);
+  ) : Promise<Street> {
+    return EventDownloadHelper.downloadEventsAndAddToStreet(year, city, street);
   }
 }
