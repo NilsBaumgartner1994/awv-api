@@ -5,7 +5,7 @@ import Street from './models/Street';
 import Event from './models/Event';
 import {Provider} from './models/Provider';
 import EventHelper from './helper/EventHelper';
-import { EventLabels } from './models/EventLabels';
+import {EventLabels} from './models/EventLabels';
 
 export {AwvAPI};
 export {City};
